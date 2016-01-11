@@ -5,7 +5,6 @@ var fs = thenifyAll(require('fs'));
 var path = require('path');
 var _ = require('lodash');
 var co = require('co');
-var async = require('async');
 var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
 var toMarkdown = require('to-markdown');
@@ -105,6 +104,8 @@ function markdownIt(filename) {
 	});
 }
 
-markdownAll().catch((err) => console.log('err:', err));
-
-makeContentTable().catch((err) => console.log(err));
+co(function *() {
+	yield markdownAll();
+	yield makeContentTable();
+	console.log('success');
+}).catch((err) => console.error(err));
