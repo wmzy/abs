@@ -28,7 +28,7 @@ function makeContentTable() {
 		var exampleList = parseDl($('.LOT > dl').last());
 
 		//console.log(contentTable)
-		fs.writeFile(path.join(__dirname, 'SUMMARY.md'), contentTable + tableList + exampleList);
+		fs.writeFile(path.join(destDir, 'SUMMARY.md'), contentTable + tableList + exampleList);
 
 		function parseDl($dl, indentation) {
 			indentation = indentation || '';
@@ -44,7 +44,7 @@ function makeContentTable() {
 
 		function parseDt($dt) {
 			return '* [' + $dt.text().replace(/\s+/g, ' ').replace(/\[/g, '\\[').replace(/\]/g, '\\]') + ']('
-				+ 'dest/' + ($dt.find('a').attr('href') || 'index.html').replace('.html', '.md') + ')\n';
+				+ ($dt.find('a').attr('href') || 'index.html').replace('.html', '.md') + ')\n';
 		}
 	});
 }

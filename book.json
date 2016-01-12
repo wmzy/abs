@@ -4,6 +4,7 @@
 	"gitbook": "2.x.x",
 	"language": "zh",
 	"structure": {
-		"readme": "dest/index.md"
+		"readme": "dest/index.md",
+		"summary": "dest/SUMMARY.md"
 	}
 }
