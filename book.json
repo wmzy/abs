@@ -1,5 +1,8 @@
 {
 	"title": "高级Bash脚本编程指南",
+	"description": "把html格式的《高级Bash脚本编程指南》转为gitbook电子书。",
+	"gitbook": "2.x.x",
+	"language": "zh",
 	"structure": {
 		"readme": "dest/index.md"
 	}
